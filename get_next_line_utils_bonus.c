@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baroun <baroun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 15:42:08 by baroun            #+#    #+#             */
-/*   Updated: 2021/11/22 17:51:10 by baroun           ###   ########.fr       */
+/*   Created: 2021/11/22 17:39:42 by baroun            #+#    #+#             */
+/*   Updated: 2021/11/22 18:01:16 by baroun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -66,11 +66,17 @@ char	*ft_strcat(char *dest, const char *src)
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dst;
+	char	*str;
+	size_t	i;
 
+	i = 0;
 	dst = malloc(count * size);
 	if (!dst)
 		return (NULL);
-	ft_bzero(dst, count * size);
+	str = dst;
+	while (i < count * size)
+		str[i++] = '\0';
+	dst = str;
 	return (dst);
 }
 
