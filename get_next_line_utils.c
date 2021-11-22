@@ -6,7 +6,7 @@
 /*   By: baroun <baroun@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:42:08 by baroun            #+#    #+#             */
-/*   Updated: 2021/11/22 17:51:10 by baroun           ###   ########.fr       */
+/*   Updated: 2021/11/22 18:25:16 by baroun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,17 @@ char	*ft_strcat(char *dest, const char *src)
 	return (dest);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*dst;
+	char	*dest;
+	int		dest_len;
 
-	dst = malloc(count * size);
-	if (!dst)
+	dest_len = ft_strlen(s);
+	dest = (char *) malloc(dest_len + 1);
+	if (!dest)
 		return (NULL);
-	ft_bzero(dst, count * size);
-	return (dst);
+	ft_strlcpy(dest, s, dest_len);
+	return (dest);
 }
 
 char	*ft_strchr(const char *s, int c)
