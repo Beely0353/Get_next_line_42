@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baroun <baroun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:42:08 by baroun            #+#    #+#             */
-/*   Updated: 2021/11/22 18:25:16 by baroun           ###   ########.fr       */
+/*   Updated: 2023/03/28 10:17:23 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,13 @@ char	*ft_strdup(const char *s)
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-	int		i;
-
-	str = (char *) s;
-	i = 0;
-	while (str[i] != (unsigned char) c)
+	while (*s)
 	{
-		if (str[i] == '\0')
-			return (NULL);
-		i++;
+		if (*s == (const char)c)
+			return ((char *) s);
+		s++;
 	}
-	return (str + i);
+	if (*s == (char)c)
+		return ((char *)s);
+	return (NULL);
 }
