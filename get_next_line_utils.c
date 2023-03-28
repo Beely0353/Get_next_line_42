@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:42:08 by baroun            #+#    #+#             */
-/*   Updated: 2023/03/28 10:17:23 by biaroun          ###   ########.fr       */
+/*   Updated: 2023/03/28 10:59:34 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	*ft_strdup(const char *s)
 	int		dest_len;
 
 	dest_len = ft_strlen(s);
-	dest = (char *) malloc(dest_len + 1);
+	dest = malloc(sizeof(char) * (dest_len + 1));
 	if (!dest)
 		return (NULL);
 	ft_strlcpy(dest, s, dest_len);
@@ -78,13 +78,16 @@ char	*ft_strdup(const char *s)
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	int	i;
+
+	if (!c || c == 1024)
+		return ((char *)s + ft_strlen(s));
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (const char)c)
-			return ((char *) s);
-		s++;
+		if (s[i] == (unsigned char)c)
+			return ((char *)s + i);
+		i++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
-	return (NULL);
+	return (0);
 }
