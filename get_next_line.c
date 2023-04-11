@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baroun <baroun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:53:05 by baroun            #+#    #+#             */
-/*   Updated: 2021/11/22 17:29:52 by baroun           ###   ########.fr       */
+/*   Updated: 2023/03/28 12:57:35 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char	*get_line(int fd, char	*buf)
 	char	*mbufsize;
 	int		ret;
 
-	mbufsize = (char *) malloc(BUFFER_SIZE + 1);
+	mbufsize = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!mbufsize)
 	{
 		free(mbufsize);

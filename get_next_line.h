@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baroun <baroun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:53:23 by baroun            #+#    #+#             */
-/*   Updated: 2021/11/22 16:23:50 by baroun           ###   ########.fr       */
+/*   Updated: 2023/03/28 12:57:43 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10000000000
+# endif
 
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
